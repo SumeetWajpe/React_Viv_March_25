@@ -6,19 +6,16 @@
     <title>Document</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.7.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/15.7.0/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0-alpha1/JSXTransformer.js"></script>
   </head>
   <body>
     <div id="root"></div>
 
-
-    
-    <script>
-      var h1Element = React.createElement("h1", {}, "Hello React !"); // React.createElement(element,attributes,children)
-      var pElement = React.createElement("p", {}, "I am a paragraph!");
-      var sectionElement = React.createElement("section", {}, [
-        h1Element,
-        pElement,
-      ]);
+    <script type="text/jsx">
+      var sectionElement = <section>
+         <h1> Hello JSX !</h1>
+         <p> This is a para ! </p>
+      </section>
 
       ReactDOM.render(sectionElement, document.getElementById("root"));
     </script>
