@@ -17,16 +17,15 @@
       class BasicComponent extends React.Component {
         render() {
           return <div>
-            <h1> Hello Component using JSX !</h1>
-            <p> Hello !</p>
+            <h1> {this.props.msg} </h1>
           </div>
         }
       }
 
       var basicCompInstance = <div>
-        <BasicComponent />
-        <BasicComponent />
-        <BasicComponent />
+        <BasicComponent msg="Hello" />
+        <BasicComponent msg="Hi"/>
+        <BasicComponent msg="Bye"/>
       </div>;
 
       ReactDOM.render(basicCompInstance, document.getElementById("root"));
