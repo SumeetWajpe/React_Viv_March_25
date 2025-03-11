@@ -18,8 +18,8 @@ class App extends React.Component {
           from="Parker"
           imageUrl="https://t4.ftcdn.net/jpg/02/19/68/97/360_F_219689742_N53gBb5bVYPzWTOaps8A2LAUx62jbvWo.jpg"
         />
-        {/* <Message msg="Hi" to="James" from="Bond" />
-        <Message msg="Hola" to="John" from="McLaren" /> */}
+        <Message msg="Hi" to="James" from="Bond" />
+        <Message msg="Hola" to="John" from="McLaren" />
       </div>
     );
   }
