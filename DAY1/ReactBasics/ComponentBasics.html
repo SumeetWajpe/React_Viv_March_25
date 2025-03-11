@@ -18,14 +18,16 @@
         render() {
           return <div>
             <h1> {this.props.msg} </h1>
+            <p>From : {this.props.from}</p>
+            <p>To : {this.props.to}</p>
           </div>
         }
       }
 
       var basicCompInstance = <div>
-        <BasicComponent msg="Hello" />
-        <BasicComponent msg="Hi"/>
-        <BasicComponent msg="Bye"/>
+        <BasicComponent msg="Hello" to="John" from="Carter" />
+        <BasicComponent msg="Hi" to="James" from="Bond" />
+        <BasicComponent msg="Bye" to="Peter" from="Parker" />
       </div>;
 
       ReactDOM.render(basicCompInstance, document.getElementById("root"));
