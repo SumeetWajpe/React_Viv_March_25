@@ -4,7 +4,7 @@ class Message extends React.Component {
   render() {
     return (
       <div>
-        {this.props.imageUrl ? (
+        {/* {this.props.imageUrl ? (
           <img src={this.props.imageUrl} alt="" width="150px" height="100px" />
         ) : (
           <img
@@ -13,11 +13,17 @@ class Message extends React.Component {
             width="150px"
             height="100px"
           />
-        )}
+        )} */}
+        <img
+          src={this.props.messagedetails.imageUrl}
+          alt=""
+          width="150px"
+          height="100px"
+        />
 
-        <h1>{this.props.msg}</h1>
-        <p>From : {this.props.from}</p>
-        <p>To : {this.props.to}</p>
+        <h1>{this.props.messagedetails.msg}</h1>
+        <p>From : {this.props.messagedetails.from}</p>
+        <p>To : {this.props.messagedetails.to}</p>
       </div>
     );
   }
