@@ -18,7 +18,8 @@ class Course extends React.Component {
               Rating : {this.props.coursedetails.rating}
             </p>
             <button className="btn btn-primary">
-              {this.props.coursedetails.likes}
+              {this.props.coursedetails.likes}{" "}
+              <i className="fa-solid fa-thumbs-up"></i>
             </button>
           </div>
         </div>
