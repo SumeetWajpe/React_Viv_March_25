@@ -1,6 +1,7 @@
 import React from "react";
 import ListOfCourses from "../listofcourses/listofcourses";
 import Message from "../message/message";
+import Counter from "../counter/counter";
 
 // class App extends React.Component {
 //   render() {
@@ -9,7 +10,8 @@ import Message from "../message/message";
 // }
 
 function App() {
-  return <ListOfCourses />;
+  // return <ListOfCourses />;
+  return <Counter />;
 }
 
 export default App;
