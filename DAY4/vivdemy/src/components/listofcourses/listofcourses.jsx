@@ -57,7 +57,7 @@ class ListOfCourses extends React.Component {
 
         <div className="row">
           {this.courses.map(course => (
-            <Course coursedetails={course} />
+            <Course key={course.id} coursedetails={course} />
           ))}
         </div>
       </div>
