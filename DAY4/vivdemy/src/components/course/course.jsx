@@ -26,7 +26,7 @@ var Course = props => {
           </p>
           <button className="btn btn-primary" onClick={() => IncrementLikes()}>
             {/* {this.props.coursedetails.likes}{" "} */}
-            {this.state.currLikes} <i className="fa-solid fa-thumbs-up"></i>
+            {currLikes} <i className="fa-solid fa-thumbs-up"></i>
           </button>
         </div>
       </div>

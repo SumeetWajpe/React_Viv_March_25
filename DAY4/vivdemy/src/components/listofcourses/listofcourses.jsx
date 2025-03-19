@@ -1,10 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Course from "../course/course";
+import axios from "axios";
 
 //
 
 function ListOfCourses() {
-  var courses = ;
+  const [courses, setCourses] = useState([]);
+
+  useEffect(function () {
+    axios
+      .get("http://localhost:3500/courses")
+      .then(function (response) {
+        console.log(response.data);
+        setCourses(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
 
   return (
     <div>
