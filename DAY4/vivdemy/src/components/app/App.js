@@ -4,13 +4,15 @@ import Message from "../message/message";
 import Counter from "../counter/counter";
 import Posts, { Add } from "../posts/posts";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import Navbar from "../navbar/navbar";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         {/* <a href="/">Courses</a> | <a href="/posts">Posts</a> */}
-        <Link to="/">Courses</Link> | <Link to="/posts">Posts</Link>
+        {/* <Link to="/">Courses</Link> | <Link to="/posts">Posts</Link> */}
+        <Navbar />
         <Routes>
           <Route path="/" Component={ListOfCourses} />
           <Route path="/posts" Component={Posts} />
