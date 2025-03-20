@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"; // 16.8  version onwards
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Posts() {
   var [posts, setPosts] = useState([]);
@@ -19,11 +20,19 @@ function Posts() {
   return (
     <div>
       <h2>Posts</h2>
-      <ul>
-        {posts.map(post => {
-          return <li key={post.id}>{post.title}</li>;
-        })}
-      </ul>
+      {posts.length === 0 ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {posts.map(function (post) {
+            return (
+              <li key={post.id}>
+                <Link to={"/postdetails/" + post.id}>{post.title}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
 }

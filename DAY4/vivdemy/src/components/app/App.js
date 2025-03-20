@@ -5,6 +5,7 @@ import Counter from "../counter/counter";
 import Posts, { Add } from "../posts/posts";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
+import PostDetails from "../postdetails/postdetails";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Routes>
           <Route path="/" Component={ListOfCourses} />
           <Route path="/posts" Component={Posts} />
+          <Route path="/postdetails/:id" Component={PostDetails} />
           <Route path="/counter" Component={Counter} />
 
           <Route
