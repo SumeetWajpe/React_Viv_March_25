@@ -1,7 +1,7 @@
 {
   "courses": [
     {
-      "id": 1,
+      "id": "1",
       "title": "React",
       "price": 5000,
       "likes": 400,
@@ -10,7 +10,7 @@
       "description": "React is a JavaScript library for building user interfaces. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications."
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Redux",
       "price": 4000,
       "likes": 600,
@@ -19,7 +19,7 @@
       "description": "Redux is an open-source JavaScript library for managing application state. It is most commonly used with libraries such as React or Angular for building user interfaces. Similar to (and inspired by) Facebook's Flux architecture, it was created by Dan Abramov and Andrew Clark."
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Node",
       "price": 6000,
       "likes": 900,
@@ -28,7 +28,7 @@
       "description": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser. Node.js lets developers use JavaScript to write command-line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser."
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Angular",
       "price": 5000,
       "likes": 200,
@@ -37,13 +37,31 @@
       "description": "Angular is a platform and framework for building single-page client applications using HTML and TypeScript. Angular is written in TypeScript. It implements core and optional functionality as a set of TypeScript libraries that you import into your apps."
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Flutter",
       "price": 7000,
       "likes": 700,
       "rating": 4,
       "imageUrl": "https://miro.medium.com/max/2000/1*PCKC8Ufml-wvb9Vjj3aaWw.jpeg",
       "description": "Flutter is an open-source UI software development kit created by Google. It is used to develop applications for Android, iOS, Linux, Mac, Windows, Google Fuchsia, and the web from a single codebase."
+    },
+    {
+      "id": 7,
+      "title": "GraphQL",
+      "price": 8000,
+      "rating": 5,
+      "likes": 800,
+      "imageUrl": "https://www.gravitee.io/hubfs/graphql.png",
+      "description": "GraphQL !"
+    },
+    {
+      "id": 6,
+      "title": "Kubernetes",
+      "price": 9000,
+      "rating": 5,
+      "likes": 900,
+      "imageUrl": "https://i.imgur.com/0HhNox3.png",
+      "description": "K8s !"
     }
   ]
 }
