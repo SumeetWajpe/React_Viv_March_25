@@ -10,7 +10,7 @@ var Course = props => {
   }
 
   return (
-    <div className="col-md-3">
+    <div className="col-md-3 mt-1">
       <div className="card">
         <Link to={"/coursedetails/" + props.coursedetails.id}>
           <img
