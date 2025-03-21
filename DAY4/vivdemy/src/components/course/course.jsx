@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Ratings from "../ratings/ratings";
+import { Link } from "react-router-dom";
 
 var Course = props => {
   var [currLikes, setCurrentLikes] = useState(props.coursedetails.likes);
@@ -11,12 +12,14 @@ var Course = props => {
   return (
     <div className="col-md-3">
       <div className="card">
-        <img
-          src={props.coursedetails.imageUrl}
-          className="card-img-top"
-          alt={props.coursedetails.title}
-          height="175px"
-        />
+        <Link to={"/coursedetails/" + props.coursedetails.id}>
+          <img
+            src={props.coursedetails.imageUrl}
+            className="card-img-top"
+            alt={props.coursedetails.title}
+            height="175px"
+          />
+        </Link>
         <div className="card-body">
           <h5 className="card-title">{props.coursedetails.title}</h5>
           <p className="card-text">₹. {props.coursedetails.price}</p>

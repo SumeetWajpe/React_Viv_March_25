@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function PostDetails() {
-  const { id } = useParams();
+  const { id } = useParams(); // fetch the id from the URL
   const [post, setPost] = useState({});
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function PostDetails() {
         // console.log(response.data);
         setPost(response.data);
       });
-  });
+  }, []);
 
   return (
     <div>
