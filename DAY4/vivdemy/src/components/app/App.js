@@ -7,6 +7,7 @@ import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import Navbar from "../navbar/navbar";
 import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
+import NewCourse from "../newcourse/newcourse";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" Component={ListOfCourses} />
           <Route path="/coursedetails/:courseid" Component={CourseDetails} />
+          <Route path="/newcourse" Component={NewCourse} />
           <Route path="/posts" Component={Posts} />
           <Route path="/postdetails/:id" Component={PostDetails} />
           <Route path="/counter" Component={Counter} />
