@@ -11,7 +11,6 @@ function ListOfCourses() {
     axios
       .get("http://localhost:3500/courses")
       .then(function (response) {
-        console.log(response.data);
         setCourses(response.data);
       })
       .catch(function (error) {

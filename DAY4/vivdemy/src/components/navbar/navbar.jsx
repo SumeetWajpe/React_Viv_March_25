@@ -40,6 +40,11 @@ function Navbar() {
                 Counter
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/context">
+                Context API
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

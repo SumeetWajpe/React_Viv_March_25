@@ -13,7 +13,6 @@ function NewCourse() {
       <form
         onSubmit={e => {
           e.preventDefault(); // PREVENT THE PAGE FROM REFRESHING
-          console.log(newcourse);
 
           axios.post("http://localhost:3500/courses", newcourse).then(res => {
             if (res.data.title == newcourse.title) {

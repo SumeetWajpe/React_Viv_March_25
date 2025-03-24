@@ -8,6 +8,7 @@ import Navbar from "../navbar/navbar";
 import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
 import NewCourse from "../newcourse/newcourse";
+import { GrandParent } from "../context/basics";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/posts" Component={Posts} />
           <Route path="/postdetails/:id" Component={PostDetails} />
           <Route path="/counter" Component={Counter} />
+          <Route path="/context" Component={GrandParent} />
 
           <Route
             path="*"
