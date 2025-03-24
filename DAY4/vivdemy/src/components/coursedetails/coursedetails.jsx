@@ -1,22 +1,13 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Ratings from "../ratings/ratings";
+import CoursesContext from "../context/coursescontext";
 
 function CourseDetails() {
   const { courseid } = useParams();
-  const [theCourse, setTheCourse] = useState({});
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:3500/courses/" + courseid)
-      .then(response => {
-        setTheCourse(response.data);
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  },[]);
+  const ctx = useContext(CoursesContext); // Consumer
+  const theCourse = ctx.courses.find(course => course.id == courseid);
 
   return (
     <div>

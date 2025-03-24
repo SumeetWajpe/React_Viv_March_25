@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import Course from "../course/course";
-import axios from "axios";
-
-//
+import CoursesContext from "../context/coursescontext";
 
 function ListOfCourses() {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(function () {
-    axios
-      .get("http://localhost:3500/courses")
-      .then(function (response) {
-        setCourses(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
+  const courseCtx = useContext(CoursesContext);// Consumer
 
   return (
     <div>
       <h1>List of Courses</h1>
 
       <div className="row">
-        {courses.map(course => (
+        {courseCtx.courses.map(course => (
           <Course key={course.id} coursedetails={course} />
         ))}
       </div>

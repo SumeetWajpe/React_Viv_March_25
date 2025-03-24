@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Ratings from "../ratings/ratings";
 import { Link } from "react-router-dom";
+import CoursesContext from "../context/coursescontext";
 
 var Course = props => {
-  var [currLikes, setCurrentLikes] = useState(props.coursedetails.likes);
+  const ctx = useContext(CoursesContext);
 
   function IncrementLikes() {
-    setCurrentLikes(currLikes + 1);
+    console.log("IncrementLikes");
+    var course = ctx.courses.find(c => c.id == props.coursedetails.id);
+    course.likes++;
+    ctx.setCourses([...ctx.courses]);
   }
 
   return (
@@ -29,7 +33,8 @@ var Course = props => {
           </p>
           <button className="btn btn-primary" onClick={() => IncrementLikes()}>
             {/* {this.props.coursedetails.likes}{" "} */}
-            {currLikes} <i className="fa-solid fa-thumbs-up"></i>
+            {props.coursedetails.likes}{" "}
+            <i className="fa-solid fa-thumbs-up"></i>
           </button>
         </div>
       </div>

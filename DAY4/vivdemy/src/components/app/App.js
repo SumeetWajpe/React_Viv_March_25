@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ListOfCourses from "../listofcourses/listofcourses";
 import Message from "../message/message";
 import Counter from "../counter/counter";
@@ -9,31 +9,47 @@ import PostDetails from "../postdetails/postdetails";
 import CourseDetails from "../coursedetails/coursedetails";
 import NewCourse from "../newcourse/newcourse";
 import { GrandParent } from "../context/basics";
+import CoursesContext from "../context/coursescontext";
+import axios from "axios";
 
 function App() {
+  const [courses, setCourses] = useState([]);
+  useEffect(function () {
+    axios
+      .get("http://localhost:3500/courses")
+      .then(function (response) {
+        setCourses(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []);
+
   return (
     <>
-      <BrowserRouter>
-        {/* <a href="/">Courses</a> | <a href="/posts">Posts</a> */}
-        {/* <Link to="/">Courses</Link> | <Link to="/posts">Posts</Link> */}
-        <Navbar />
-        <Routes>
-          <Route path="/" Component={ListOfCourses} />
-          <Route path="/coursedetails/:courseid" Component={CourseDetails} />
-          <Route path="/newcourse" Component={NewCourse} />
-          <Route path="/posts" Component={Posts} />
-          <Route path="/postdetails/:id" Component={PostDetails} />
-          <Route path="/counter" Component={Counter} />
-          <Route path="/context" Component={GrandParent} />
+      <CoursesContext.Provider value={{ courses, setCourses }}>
+        <BrowserRouter>
+          {/* <a href="/">Courses</a> | <a href="/posts">Posts</a> */}
+          {/* <Link to="/">Courses</Link> | <Link to="/posts">Posts</Link> */}
+          <Navbar />
+          <Routes>
+            <Route path="/" Component={ListOfCourses} />
+            <Route path="/coursedetails/:courseid" Component={CourseDetails} />
+            <Route path="/newcourse" Component={NewCourse} />
+            <Route path="/posts" Component={Posts} />
+            <Route path="/postdetails/:id" Component={PostDetails} />
+            <Route path="/counter" Component={Counter} />
+            <Route path="/context" Component={GrandParent} />
 
-          <Route
-            path="*"
-            element={
-              <img src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg" />
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+            <Route
+              path="*"
+              element={
+                <img src="https://internetdevels.com/sites/default/files/public/blog_preview/404_page_cover.jpg" />
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </CoursesContext.Provider>
     </>
   );
 }
