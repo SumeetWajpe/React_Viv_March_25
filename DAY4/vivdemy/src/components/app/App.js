@@ -11,7 +11,7 @@ import NewCourse from "../newcourse/newcourse";
 import { GrandParent } from "../context/basics";
 import CoursesContext from "../context/coursescontext";
 import axios from "axios";
-const Posts = React.lazy(() => import("../posts/posts"));
+const Posts = React.lazy(() => import("../posts/posts")); // creates a seperate bundle for posts
 
 function App() {
   const [courses, setCourses] = useState([]);
